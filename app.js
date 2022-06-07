@@ -1,51 +1,40 @@
 const playButton = document.querySelector('.play')
 const pauseButton = document.querySelector('.pause')
-let inputNumber = document.querySelector('.enter-timer')
+let inputNumber = document.querySelector('input')
+const resetButton = document.querySelector('.reset')
+let countdownNumber
+let receivedNumber
 
-// playButton.addEventListener('click', () => {
-//     console.log('hi')
-// })
-
+console.log(inputNumber.value)
 console.log(inputNumber)
-let receivedNumber = inputNumber.innerText
-console.log(receivedNumber)
-const end = 0
-// if (receivedNumber > end) {
-//   Play()
-// } else {
-//   Stop()
-// }
+receivedNumber = inputNumber.value
 
-Play()
+inputNumber.addEventListener('input', () => {
+  receivedNumber = inputNumber.value
+})
 
 function Play() {
-  const countdownNumber = setInterval(() => {
-    inputNumber.innerHTML = receivedNumber
-    if (receivedNumber <= 0) {
-      clearInterval(countdownNumber)
-    }
-    receivedNumber = receivedNumber - 1
-    console.log(receivedNumber)
-  }, 1000)
-  console.log(countdownNumber)
+  if (receivedNumber > 0 && receivedNumber != 0) {
+    countdownNumber = setInterval(() => {
+      if (receivedNumber <= 1) {
+        clearInterval(countdownNumber)
+      }
+      receivedNumber = receivedNumber - 1
+      inputNumber.value = receivedNumber
+      console.log(receivedNumber)
+    }, 1000)
+  }
+  
 }
 
-// pauseButton.addEventListener('click', () => {
-//     clearInterval(countdownNumber)
-// })
+pauseButton.addEventListener('click', () => {
+  clearInterval(countdownNumber)
+})
 
-// setInterval(() => {
-//     receivedNumber = receivedNumber - 1
-// }, 1000)
-// const countdownNumber = setInterval(() => {
-//     receivedNumber = receivedNumber - 1
-// }, 1000)
-// console.log(countdownNumber)
+playButton.addEventListener('click', Play)
 
-// function Timer() {
-//     while(receivedNumber > 0) {
 
-//     }
-// }
-
-// const countdown = setInterval(Timer, 1000)
+resetButton.addEventListener('click', () => {
+  inputNumber.value = 0
+  clearInterval(countdownNumber)
+})

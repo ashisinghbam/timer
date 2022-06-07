@@ -29,18 +29,21 @@ body, html {
     border-radius: 10px;
 }
 
+span {
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+}
+
 input {
     width: 5rem;
     height: 5rem;
     font-size: 3.3rem;
     border-radius: 10px;
     outline: none;
-    border: 1px solid black;
+    border: none;
+    text-align: center;
 }
-
-
-
-
 
 .play-pause-container {
     display: flex;
@@ -52,9 +55,42 @@ input {
 }
 
 .play,
-.pause {
+.pause,
+.reset {
     cursor: pointer;
+    padding: 0 0.2rem;
+    border-radius: 10px;
+
 }
+
+.play:hover,
+.play:focus,
+.play:active,
+.pause:hover,
+.pause:active,
+.pause:focus {
+    background-color: rgb(214, 139, 150);
+
+}
+
+.reset {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: none;
+    font-family: inherit;
+    font-weight: 600;
+    background-color: rgb(252, 27, 27);
+    color: white;
+}
+
+.reset:hover,
+.reset:focus {
+    background-color: rgb(255, 0, 0);
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in;
+}
+
 
 
 

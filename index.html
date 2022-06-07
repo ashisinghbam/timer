@@ -13,16 +13,17 @@
     <div class="parent-container">
 
 
-        <h1>Countdown Timer (seconds)</h1>
+        <h1>Set A Timer <span>(seconds)</span></h1>
 
         <div class="circle">
             <!-- <input type="text" class="enter-timer tens-digit"> -->
-            <div class="enter-timer ones-digit">5</div>
+            <input type="number" min="0" class="enter-timer ones-digit"></input>
             <div class="play-pause-container">
                 <h2 class="play">>></h2>
                 <h2 class="pause">| |</h2>
-
             </div>
+            <button class="reset">Reset</button>
+
         </div>
     </div>
     <script src="app.js"></script>
