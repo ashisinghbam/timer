@@ -91,6 +91,20 @@ input {
     transition: transform 0.3s ease-in;
 }
 
+@media (max-width: 400px) {
+    .parent-container {
+        margin: 2rem 1rem;
+    }
+
+    .circle {
+        padding: 1rem 2rem;
+
+    }
+
+    .play-pause-container {
+        padding: 1rem 2rem;
+    }
+}
 
 
 
