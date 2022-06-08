@@ -1,4 +1,4 @@
-# timer
+# Timer
 
 # 100DaysOfCode
 
